@@ -4,5 +4,21 @@
     <string name="app_name">Laboratorio07</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="dica_cidade">Cidade</string>
+    <string-array name="lista_estados">
+        <item >Acre</item>
+        <item>Amazonas</item>
+        <item >Bahia</item>
+        <item>Minas Gerais</item>
+        <item>Para</item> 
+        <item >Rio de Janeiro</item>
+        <item>São Paulo</item>       
+    </string-array>
+    <string name="label_operacao">Operação</string>
+    <string name="label_tipoOperacao">Selecione o Tipo de Operação</string>
+    <string name="label_tipoMoto">Selecione o estilo da moto</string>
+    <string name="label_estilo">Estilo da Moto</string>
+    <string name="label_vlrMinimo">Valor mínimo: </string>
+    <string name="label_vlrMaximo">Valor máximo: </string>
 
 </resources>
