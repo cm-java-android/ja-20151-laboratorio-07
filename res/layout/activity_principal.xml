@@ -126,6 +126,6 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout2" 
         android:max="15000"
-        android:progress="500"/>
+        android:progress="1000"/>
 
 </RelativeLayout>

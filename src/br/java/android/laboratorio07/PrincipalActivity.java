@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class PrincipalActivity extends Activity implements OnClickListener {
@@ -20,6 +21,12 @@ public class PrincipalActivity extends Activity implements OnClickListener {
 	// Precisamos saber qual foi a operação selecionada
 	private int indiceOperacao;
 	private boolean[] tiposMotosSelecionadas;
+	
+	// Valores selecionados do SeekBar
+	private TextView minimoTextView;
+	private TextView maximoTextView;
+	private SeekBar minimoSeekBar;
+	private SeekBar maximoSeekBar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,13 @@ public class PrincipalActivity extends Activity implements OnClickListener {
 		indiceOperacao = 0;
 		tiposMotosSelecionadas = new boolean[5];
 		
+		minimoTextView = (TextView) findViewById(R.id.minimoTextView);
+		minimoSeekBar = (SeekBar) findViewById(R.id.minimoSeekBar);
+		maximoTextView = (TextView) findViewById(R.id.maximoTextView);
+		maximoSeekBar = (SeekBar) findViewById(R.id.maximoSeekBar);
+		// Aqui eu passo os valores do SeekBar para o TextView associado
+		minimoTextView.setText(Integer.toString(minimoSeekBar.getProgress()));
+		maximoTextView.setText(Integer.toString(maximoSeekBar.getProgress()));
 	}
 
 	@Override
