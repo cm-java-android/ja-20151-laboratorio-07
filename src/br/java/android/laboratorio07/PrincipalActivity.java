@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,6 +51,52 @@ public class PrincipalActivity extends Activity implements OnClickListener {
 		// Aqui eu passo os valores do SeekBar para o TextView associado
 		minimoTextView.setText(Integer.toString(minimoSeekBar.getProgress()));
 		maximoTextView.setText(Integer.toString(maximoSeekBar.getProgress()));
+		
+		minimoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// Aqui, apenas quando o usuário soltar o seekbar que o valor é capturados
+				// Melhor opção caso tenha que enviar os dados para algum servidor
+				Log.d("Laboratorio 07", "Valor minimo recebido" + minimoSeekBar.getProgress());
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) {
+				// Aqui, a cada toque, é capturado o valor do SeekBar
+				// Este é ruim caso tenha que enviar os dados para algum servidor
+				// Como não é o caso..
+				minimoTextView.setText(String.valueOf(minimoSeekBar.getProgress()));
+				
+			}
+		});
+		
+		maximoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				Log.d("Laboratorio 07", "Valor maximo recebido" + maximoSeekBar.getProgress());
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) {
+				maximoTextView.setText(String.valueOf(maximoSeekBar.getProgress()));
+			}
+		});
 	}
 
 	@Override
