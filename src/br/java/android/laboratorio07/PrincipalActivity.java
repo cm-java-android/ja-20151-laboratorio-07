@@ -17,7 +17,7 @@ public class PrincipalActivity extends Activity implements OnClickListener {
 	
 	//Crie constantes para que você possa diferenciar qual Dialog está sendo chamado
 	private static final int DIALOG_OPERACAO = 1;
-	private static final int DIALOG_TIPO_OPERACAO = 2;
+	private static final int DIALOG_ESTILO_MOTO = 2;
 
 	// Precisamos saber qual foi a operação selecionada
 	private int indiceOperacao;
@@ -140,7 +140,7 @@ public class PrincipalActivity extends Activity implements OnClickListener {
 	}
 
 	private void abrirDialogTipo() {
-		showDialog(DIALOG_TIPO_OPERACAO);
+		showDialog(DIALOG_ESTILO_MOTO);
 		// Existe o desestímulo de usar essa apresentação
 		// e utilizar o uso do DialogFragment
 		// Mas vamos ver isso no proximo laboratorio
@@ -177,7 +177,7 @@ public class PrincipalActivity extends Activity implements OnClickListener {
 			
 			break;
 			
-		case DIALOG_TIPO_OPERACAO:
+		case DIALOG_ESTILO_MOTO:
 			CharSequence[] tipos = new CharSequence[]{"Street", "Trilha", 
 					"Estrada", "Chopper", "Custom"};
 			
